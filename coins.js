@@ -1,11 +1,14 @@
 var coinPurseDOM = document.getElementById("coinPurse");
 
 
-function coinCounter (money) {
+function coinCounter(money) {
   // Initialize a JavaScript object to hold the coins
   var coinPurse = {};
   
-  money = money*100
+  money = money*100;
+
+  money = money.toFixed();
+  console.log("money", money);
 
   var remainderQuarters = money % 25;
   coinPurse.quarters = (money - remainderQuarters) / 25;
@@ -27,7 +30,6 @@ function coinCounter (money) {
 }
 
 var userInput = prompt("List an amount you want divided into coins. (eg: 1.67) ");
-var userInputParsed = parseFloat(userInput);
+var userInputParsed = (parseFloat(userInput));
 coinCounter(userInputParsed);
-
 
